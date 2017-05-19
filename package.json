@@ -1,0 +1,28 @@
+{
+  "name": "react-rpm",
+  "version": "1.0.0",
+  "description": "NPM module for react-rpm Chrome developers tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fbjs": "^0.8.12",
+    "object-assign": "^4.1.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  },
+  "peerDependencies": {
+    "react-dom": "^15.x",
+    "react": "^15.x",
+    "fbjs": "^0.x",
+    "object-assign": "^4.x",
+    "react-addons-perf": "^15.x"
+  },
+  "devDependencies": {
+    "fbjs": "^0.8.12",
+    "react-addons-perf": "^15.4.2"
+  }
+}
