@@ -15,21 +15,18 @@ const MutationObserver = window.MutationObserver;
   start();
   let perfObject;
   var observer = new MutationObserver((mutations, observer) => {
-    console.log('Mutation observer loaded -- watching DOM for changes...');
     perfObject = {};
     stop();
     perfObject['wasted'] = printWasted();
     perfObject['inclusive'] = printInclusive();
     perfObject['exclusive'] = printExclusive();
     perfObject['dom'] = printOperations();
-    console.log('[message from react-rpm node module]:\n\nEXCLUSIVE:\n')
-    consoleTable(printExclusive()) 
-    console.log('\n[message from react-rpm node module]:\nWASTED:\n');
-    consoleTable(printWasted());
-    window.postMessage({
-      source: 'react-rpm-module',
-      message: perfObject
-    }, '*');
+    if (perfObject['inclusive'].length){
+      window.postMessage({
+        source: 'react-rpm-module',
+        message: perfObject
+      }, '*');
+    }
     start();
   })
 
@@ -403,7 +400,6 @@ function printExclusive(flushHistory) {
 
 
 function receiveMessage(event){
-  console.log('message received in npm module:',event.data);
 }
 
 window.addEventListener('message', receiveMessage, false);
@@ -494,7 +490,6 @@ function start() {
     warnInProduction();
     return;
   }
-  console.log('>>> react-rpm >>> starting perf collection...')
   ReactDebugTool.beginProfiling();
 }
 
@@ -503,7 +498,6 @@ function stop() {
     warnInProduction();
     return;
   }
-  console.log('>>> react-rpm >>> stopping perf collection...')
   ReactDebugTool.endProfiling();
 }
 
