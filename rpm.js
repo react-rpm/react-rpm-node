@@ -1,4 +1,9 @@
 /**
+ * This node module is a modification of Facebook's React source code, specifically the ReactPerf.js file.
+ * The developers of react-rpm claim no authorship/ownership of the original source.
+ */
+
+/**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
  *
