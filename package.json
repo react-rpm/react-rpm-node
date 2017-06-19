@@ -18,8 +18,7 @@
     "react-dom": "^15.x",
     "react": "^15.x",
     "fbjs": "^0.x",
-    "object-assign": "^4.x",
-    "react-addons-perf": "^15.x"
+    "object-assign": "^4.x"
   },
   "devDependencies": {
     "fbjs": "^0.8.12",
